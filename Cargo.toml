@@ -9,6 +9,7 @@ members = [
     "parser",
     "object",
     "json",
+    "xml",
     "dump",
     "pixeldata",
     "parent",
