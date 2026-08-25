@@ -71,6 +71,9 @@ pub enum DumpFormat {
     /// DICOM part 18 chapter F JSON format,
     /// provided via [`dicom_json`]
     Json,
+    /// DICOM part 19 Native DICOM Model XML format,
+    /// provided via [`dicom_xml`]
+    Xml,
 }
 
 /// Options and flags to configure how to dump a DICOM file or object.
@@ -241,6 +244,7 @@ impl DumpOptions {
                 serde_json::to_writer_pretty(stdout(), &json_obj)?;
                 Ok(())
             }
+            DumpFormat::Xml => dicom_xml::to_writer(&mut to, obj).map_err(std::io::Error::other),
         }
     }
 
@@ -297,6 +301,7 @@ impl DumpOptions {
                 serde_json::to_writer_pretty(to, &json_obj)?;
                 Ok(())
             }
+            DumpFormat::Xml => dicom_xml::to_writer(&mut to, obj).map_err(std::io::Error::other),
         }
     }
 }

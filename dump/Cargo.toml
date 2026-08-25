@@ -31,6 +31,7 @@ clap = { version  = "4.0.18", features = ["derive"], optional = true }
 dicom-core = { path = "../core", version = "0.10" }
 dicom-encoding = { path = "../encoding", version = "0.10" }
 dicom-json = { path = "../json", version = "0.10" }
+dicom-xml = { path = "../xml", version = "0.10" }
 dicom-object = { path = "../object", version = "0.10" }
 dicom-transfer-syntax-registry = { path = "../transfer-syntax-registry", version = "0.10", default-features = false }
 dicom-dictionary-std = { path = "../dictionary-std", version = "0.10" }
